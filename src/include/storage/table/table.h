@@ -1,5 +1,7 @@
 #pragma once
 
+#include <atomic>
+
 #include "catalog/catalog_entry/table_catalog_entry.h"
 #include "common/enums/rel_direction.h"
 #include "common/mask.h"

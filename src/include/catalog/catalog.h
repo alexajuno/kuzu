@@ -1,5 +1,7 @@
 #pragma once
 
+#include <atomic>
+
 #include "catalog/catalog_entry/function_catalog_entry.h"
 #include "catalog/catalog_entry/scalar_macro_catalog_entry.h"
 #include "catalog/catalog_set.h"
