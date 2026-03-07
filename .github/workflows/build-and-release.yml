@@ -97,6 +97,7 @@ jobs:
           CIBW_SKIP: "pp*"
           CIBW_ENVIRONMENT: "NUM_THREADS=3 MACOSX_DEPLOYMENT_TARGET=11.0"
           CIBW_BUILD_VERBOSITY: 1
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           package-dir: ./scripts/pip-package/kuzu.tar.gz
           output-dir: wheelhouse
