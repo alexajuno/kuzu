@@ -236,8 +236,8 @@ jobs:
           node package.js
 
       - name: Publish to GitHub Packages
-        working-directory: tools/nodejs_api/package
-        run: npm publish
+        working-directory: tools/nodejs_api
+        run: npm publish kuzu-source.tar.gz
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
