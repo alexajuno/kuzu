@@ -134,7 +134,21 @@ jobs:
         run: npm install --include=dev
 
       - name: Build Node.js addon
-        run: make nodejs NUM_THREADS=$(nproc)
+        env:
+          LDFLAGS: "-static-libgcc -static-libstdc++"
+        run: |
+          export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+          unset LD_LIBRARY_PATH LIBRARY_PATH CPATH C_INCLUDE_PATH CPLUS_INCLUDE_PATH PKG_CONFIG_PATH CC CXX
+          make nodejs NUM_THREADS=$(nproc) EXTRA_CMAKE_FLAGS="-DCMAKE_SHARED_LINKER_FLAGS='-static-libgcc -static-libstdc++'"
+
+      - name: Verify glibc compatibility
+        run: |
+          echo "=== GLIBC version requirements ==="
+          readelf --version-info tools/nodejs_api/build/kuzujs.node | grep -A1 "GLIBC_" || true
+          echo "=== Dynamic dependencies ==="
+          readelf -d tools/nodejs_api/build/kuzujs.node | grep NEEDED || true
+          echo "=== Container glibc version ==="
+          ldd --version | head -1
 
       - name: Rename prebuilt binary
         run: |
@@ -160,7 +174,21 @@ jobs:
         run: npm install --include=dev
 
       - name: Build Node.js addon
-        run: make nodejs NUM_THREADS=$(nproc)
+        env:
+          LDFLAGS: "-static-libgcc -static-libstdc++"
+        run: |
+          export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+          unset LD_LIBRARY_PATH LIBRARY_PATH CPATH C_INCLUDE_PATH CPLUS_INCLUDE_PATH PKG_CONFIG_PATH CC CXX
+          make nodejs NUM_THREADS=$(nproc) EXTRA_CMAKE_FLAGS="-DCMAKE_SHARED_LINKER_FLAGS='-static-libgcc -static-libstdc++'"
+
+      - name: Verify glibc compatibility
+        run: |
+          echo "=== GLIBC version requirements ==="
+          readelf --version-info tools/nodejs_api/build/kuzujs.node | grep -A1 "GLIBC_" || true
+          echo "=== Dynamic dependencies ==="
+          readelf -d tools/nodejs_api/build/kuzujs.node | grep NEEDED || true
+          echo "=== Container glibc version ==="
+          ldd --version | head -1
 
       - name: Rename prebuilt binary
         run: |
