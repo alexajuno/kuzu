@@ -139,6 +139,15 @@ Open an issue or submit a PR. We review quickly.
 
 [Vela Partners](https://vela.partners) is an AI-native quantitative venture capital firm based in San Francisco. We invest in seed-stage AI startups and publish peer-reviewed research with the University of Oxford (50+ papers). We operate multi-agent AI systems across sourcing, evaluation, and portfolio monitoring. KuzuDB is the graph memory layer for these agents.
 
+## Releases
+
+| Version | Date | Highlights |
+|---|---|---|
+| [v0.12.0-vela](https://github.com/Vela-Engineering/kuzu/releases/tag/v0.12.0-vela.87bf0be) | Mar 2026 | Concurrent multi-writer support, rebased on upstream 0.12.0 |
+| v0.11.3-vela | Nov 2025 | Initial fork, bundled extensions (algo, fts, json, vector) |
+
+See [all releases](https://github.com/Vela-Engineering/kuzu/releases).
+
 ## License
 
 MIT License. See [LICENSE](LICENSE).
