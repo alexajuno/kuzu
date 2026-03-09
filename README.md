@@ -1,4 +1,4 @@
-# KuzuDB — Maintained by Vela Engineering
+# KuzuDB — Maintained by Vela Partners
 
 **Embedded graph database for AI agent memory.** Built for speed. Concurrent multi-writer support. MIT licensed.
 
