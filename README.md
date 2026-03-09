@@ -4,7 +4,7 @@
 
 KuzuDB is an embedded property graph database optimized for complex analytical workloads on very large graphs. This fork, maintained by [Vela Partners](https://vela.partners), extends the original with concurrent write support for multi-agent AI systems.
 
-> **Looking for KuzuDB?** The original project by Kùzu Inc. (University of Waterloo) was [archived in October 2025](https://github.com/kuzudb/kuzu). This is an actively maintained fork. See [Fork Context](#fork-context) below.
+> **Looking for KuzuDB?** The original project by Kuzu Inc. (University of Waterloo) was [archived in October 2025](https://github.com/kuzudb/kuzu). This is an actively maintained fork. See [Fork Context](#fork-context) below.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
